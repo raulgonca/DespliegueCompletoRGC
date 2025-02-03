@@ -3,26 +3,26 @@
  namespace App\Entity;
  use Doctrine\ORM\Mapping as ORM;
  #[ORM\Entity]
- #[ORM\Table(name: "messages")]
- class Message
+ #[ORM\Table(name: "secretoRGC")]
+ class SecretoRGC
  {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: "integer")]
     private int $id;
     #[ORM\Column(type: "string", length: 255)]
-    private string $content;
+    private string $fraseRGC;
     public function getId(): int
     {
         return $this->id;
     }
-    public function getContent(): string
+    public function getFraseRGC(): string
     {
-        return $this->content;
+        return $this->fraseRGC;
     }
-    public function setContent(string $content): self
+    public function setFraseRGC(string $fraseRGC): self
     {
-        $this->content = $content;
+        $this->fraseRGC = $fraseRGC;
         return $this;
     }
  }

@@ -2,21 +2,22 @@ import { useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
-  const [message, setMessage] = useState("");
+  const [fraseRGC, setFraseRGC] = useState("");
+
   useEffect(() => {
     fetch("/api/db")
       .then((res) => res.json())
-      .then((data) => setMessage(data.message));
+      .then((data) => setFraseRGC(data.secretoRGC));
   }, []);
   
   return (
     <div>
-      <h1>Frontend en React de Raul Gonzalez</h1>
+      <h1>Frontend en React de Raúl González Caro</h1>
       <p>
         Esta aplicación se conecta al backend de Symfony pidiéndole una
         respuesta
       </p>
-      <p>respuesta del Backend: {message || "Loading..."}</p>
+      <p>respuesta del Backend: {fraseRGC || "Esperando la respuesta, esto puede tardar un rato"}</p>
     </div>
   );
 }
