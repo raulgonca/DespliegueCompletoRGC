@@ -15,14 +15,14 @@ class RGC_Controller extends AbstractController
     public function index(): JsonResponse
     {
         // Consulta para recuperar el primer mensaje de la tabla "messages"
-        $sql = 'SELECT secretoRGC FROM fraseRGC LIMIT 1';
+        $sql = 'SELECT fraseRGC FROM secretoRGC LIMIT 1';
         $result = $this->connection->fetchOne($sql);
         // Si no hay mensaje en la BD, devolver un mensaje de error
         if (!$result) {
-            return $this->json(['secretoRGC' => 'No messages found in the database!']);
+            return $this->json(['fraseRGC' => 'No messages found in the database!']);
         } else {
             $result = 'Backend Operativo, respuesta de la BD: ' . $result;
-            return $this->json(['secretoRGC' => $result]);
+            return $this->json(['fraseRGC' => $result]);
         }
     }
 }

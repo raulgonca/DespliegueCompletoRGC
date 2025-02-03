@@ -64,7 +64,7 @@ services:
   web:
     build:
       context: ./web
-      dockerfile: DockerfileWeb
+      dockerfile: DockerfileWebRGC
     ports:
       - "80:80"
     depends_on:

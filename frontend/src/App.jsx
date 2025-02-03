@@ -7,7 +7,7 @@ function App() {
   useEffect(() => {
     fetch("/api/db")
       .then((res) => res.json())
-      .then((data) => setFraseRGC(data.secretoRGC));
+      .then((data) => setFraseRGC(data.fraseRGC));
   }, []);
   
   return (
