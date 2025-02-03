@@ -5,7 +5,7 @@ function App() {
   const [fraseRGC, setFraseRGC] = useState("");
 
   useEffect(() => {
-    fetch("/api/db")
+    fetch("/api/RGC")
       .then((res) => res.json())
       .then((data) => setFraseRGC(data.fraseRGC));
   }, []);
@@ -17,7 +17,7 @@ function App() {
         Esta aplicación se conecta al backend de Symfony pidiéndole una
         respuesta
       </p>
-      <p>respuesta del Backend: {fraseRGC || "Esperando la respuesta, esto puede tardar un rato"}</p>
+      <p>Respuesta del Backend: {fraseRGC || "Esperando la respuesta, esto puede tardar un rato"}</p>
     </div>
   );
 }
