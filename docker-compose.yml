@@ -54,8 +54,8 @@ services:
       - "8080:80"
     environment:
       PMA_HOST: database
-      PMA_USER: user
-      PMA_PASSWORD: password
+      PMA_USER: alumnoDAW
+      PMA_PASSWORD: passRGC
     depends_on:
       - database
     networks:
